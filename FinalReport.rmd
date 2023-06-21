@@ -95,3 +95,6 @@ According to the inferential results, we can interpret that the probability to g
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+
+In conclusion, we can conclude that those who use the placebo had a higher chance of getting aides. While, those who took the drug did not get the infection. The drug in this case is effective, those who got infected were mostly the placebo users.
