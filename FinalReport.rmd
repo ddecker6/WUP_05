@@ -69,6 +69,16 @@ Looking at the graphical results, from the first graph we can see there was a lo
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+### Numerical Summaries  
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=DRUGUSR)
+rowPerc(table1)
+colPerc(table1)
+```
+
+Looking at the numerical results, we can further conclude that from those who took the drug, only 24.29% of those ended up getting aides. While, 75.71% of those were taking the placebo. Because of these numbers, we can interpret that the drug is working. 
+
 
 ## Inferential Results
 
