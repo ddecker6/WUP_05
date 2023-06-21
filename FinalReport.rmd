@@ -29,7 +29,14 @@ DRUGUSR <- filter(triUmp, DrugUser =="yes")
 ```
 
 
+```{r}
+DRUGUSR <- DRUGUSR %>%
+mutate(across(where(is.character), as.factor))
+```
+
 # Results
+
+
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
@@ -38,6 +45,26 @@ DRUGUSR <- filter(triUmp, DrugUser =="yes")
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
+
+
+#### Plot barplots ggplot way
+
+```{r}
+dd2 <- DRUGUSR %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+  
+Looking at the graphical results, from the first graph we can see there was a lot of people that didn't get anything. Regardless, due to the data this is a sign of a working drug, the half that get the drug and half get the placebo and examining their results. Most of the people who got the disease are those who got the placebo, while those who took the drug had a lesser chance of getting sick. Looking at it, 75% of those who took the placebo ended up getting sick. Which we can assume that the drug works.
 
 ### Numerical Descriptive Results
 
